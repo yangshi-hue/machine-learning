@@ -24,13 +24,18 @@ print("Intercept:", intercept)
 
 #making predictions
 predictions = model.predict(X_test)
-
 #evalaute the model
 mse = mean_squared_error(y_test, predictions)
 r2 = r2_score(y_test, predictions)
 print("Predictions :", predictions)
 print("Mean Sqaured Error : ", mse)
 print("R2_score : ", r2)
+#compare actual and predicted values
+print("\nActual vs Predicted Vaues:")
+
+for actual, predicted in zip(y_test, predictions):
+    print(f"Actual :{actual} | Predicted:{predicted:.2f}")
+
 
 #visualize
 plt.scatter(X, y)
