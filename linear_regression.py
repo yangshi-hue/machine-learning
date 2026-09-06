@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-X = np.array([[1],[3],[5],[9],[10],[7]])
-y = np.array([3,2,5,8,9,2]) #creating a sample data
+X = np.array([[1],[3],[5],[9],[10],[7],[20],[19],[45],[54]])
+y = np.array([3,2,5,8,9,2,10,23,1,9]) #creating a sample data
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size= 0.2, random_state= 42
@@ -15,6 +15,12 @@ X_train, X_test, y_train, y_test = train_test_split(
 model = LinearRegression ()#creating a mode;
 #train the model
 model.fit(X_train, y_train)
+# Display the regression equation values
+slope = model.coef_[0]
+intercept = model.intercept_
+
+print("Slope:", slope)
+print("Intercept:", intercept)
 
 #making predictions
 predictions = model.predict(X_test)
