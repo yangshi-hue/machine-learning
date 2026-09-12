@@ -24,6 +24,9 @@ prediction = model.predict(X_test)
 #finding the 2r2_Score
 r2 = r2_score(y_test, prediction)
 print("R2 score : " , r2)
+#find the mean sqaure error 
+mse = mean_squared_error(y_test, prediction)
+print("Mean Sqaurred Error : ", mse)
 #visualizing the data
 plt.scatter(X, y, marker = "*", color = "red")
 plt.plot(X, model.predict(X), color="blue")
