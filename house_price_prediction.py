@@ -21,6 +21,9 @@ model.fit(X_train, y_train) #learn the relationship between house and price
 #make a prediction
 prediction = model.predict(X_test)
 
+#finding the 2r2_Score
+r2 = r2_score(y_test, prediction)
+print("R2 score : " , r2)
 #visualizing the data
 plt.scatter(X, y, marker = "*", color = "red")
 plt.plot(X, model.predict(X), color="blue")
