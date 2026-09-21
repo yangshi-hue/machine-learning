@@ -20,3 +20,4 @@ model.fit(X)
 labels = model.labels_
 
 print(labels)
+print(model.cluster_centers_)
