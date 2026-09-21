@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 X = np.array([
@@ -20,4 +21,12 @@ model.fit(X)
 labels = model.labels_
 
 print(labels)
-print(model.cluster_centers_)
+print(model.cluster_centers_) #finding center of cluster
+
+#visualizing the data
+plt.scatter(X[:, 0], X[:, 1], c=labels)
+plt.xlabel("Age")
+plt.ylabel("Spending")
+plt.title("Customer Clusters")
+
+plt.show()
