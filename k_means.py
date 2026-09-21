@@ -25,6 +25,14 @@ print(model.cluster_centers_) #finding center of cluster
 
 #visualizing the data
 plt.scatter(X[:, 0], X[:, 1], c=labels)
+#plot cluster center
+plt.scatter(
+    model.cluster_centers_[:, 0],
+    model.cluster_centers_[:, 1],
+    marker = "*",
+    s = 100,
+    color = "Black"
+)
 plt.xlabel("Age")
 plt.ylabel("Spending")
 plt.title("Customer Clusters")
